@@ -32,7 +32,7 @@ export default function Suggestions() {
             </div>
 
             {sugestoes.map((sugestao) => (
-            <ArraySugestao 
+            <ArraySugestao key = {sugestao.name}
             name ={sugestao.name} 
             image={sugestao.image} 
             segueVoce={sugestao.segueVoce} 
