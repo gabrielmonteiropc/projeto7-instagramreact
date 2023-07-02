@@ -32,7 +32,7 @@ function ArrayPost(props) {
     }
 
     return (
-        <div class="post"  data-test="post">
+        <div class="post" data-test="post">
             <div class="topo">
                 <div class="usuario">
                     <img src={props.imgPerfil} alt="meowed" />
@@ -43,8 +43,8 @@ function ArrayPost(props) {
                 </div>
             </div>
 
-            <div onClick={curtirImagem} class="conteudo">
-                <img src={props.imgPost} alt="gato-telefone" data-test="post-image"/>
+            <div data-test="post-image" onClick={curtirImagem} class="conteudo">
+                <img src={props.imgPost} alt="gato-telefone"/>
             </div>
 
             <div class="fundo">
@@ -54,7 +54,7 @@ function ArrayPost(props) {
                             !curtidasSalvo ?
                                 <ion-icon data-test="like-post" onClick={iconeSalvarLike} name="heart-outline"></ion-icon>
                                 :
-                                <ion-icon onClick={iconeSalvarLike} class="vermelho" name="heart"></ion-icon>
+                                <ion-icon data-test="like-post" onClick={iconeSalvarLike} class="vermelho" name="heart"></ion-icon>
                         }
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
@@ -64,7 +64,7 @@ function ArrayPost(props) {
                             !postSalvo ?
                                 <ion-icon data-test="save-post" onClick={iconeSalvarPost} name="bookmark-outline"></ion-icon>
                                 :
-                                <ion-icon onClick={iconeSalvarPost} name="bookmark"></ion-icon>
+                                <ion-icon data-test="save-post" onClick={iconeSalvarPost} name="bookmark"></ion-icon>
                         }
                     </div>
                 </div>
@@ -102,7 +102,7 @@ export default function Posts() {
     ]
 
     return (
-        <div class="posts" data-test="post">
+        <div class="posts">
             {postsArray.map((post) => (
                 <ArrayPost key={post.nomeDoUsuario}
                     nomeDoUsuario={post.nomeDoUsuario}
