@@ -32,7 +32,7 @@ function ArrayPost(props) {
     }
 
     return (
-        <div class="post">
+        <div class="post"  data-test="post">
             <div class="topo">
                 <div class="usuario">
                     <img src={props.imgPerfil} alt="meowed" />
@@ -44,7 +44,7 @@ function ArrayPost(props) {
             </div>
 
             <div onClick={curtirImagem} class="conteudo">
-                <img src={props.imgPost} alt="gato-telefone" />
+                <img src={props.imgPost} alt="gato-telefone" data-test="post-image"/>
             </div>
 
             <div class="fundo">
@@ -52,7 +52,7 @@ function ArrayPost(props) {
                     <div>
                         {
                             !curtidasSalvo ?
-                                <ion-icon onClick={iconeSalvarLike} name="heart-outline"></ion-icon>
+                                <ion-icon data-test="like-post" onClick={iconeSalvarLike} name="heart-outline"></ion-icon>
                                 :
                                 <ion-icon onClick={iconeSalvarLike} class="vermelho" name="heart"></ion-icon>
                         }
@@ -62,7 +62,7 @@ function ArrayPost(props) {
                     <div>
                         {
                             !postSalvo ?
-                                <ion-icon onClick={iconeSalvarPost} name="bookmark-outline"></ion-icon>
+                                <ion-icon data-test="save-post" onClick={iconeSalvarPost} name="bookmark-outline"></ion-icon>
                                 :
                                 <ion-icon onClick={iconeSalvarPost} name="bookmark"></ion-icon>
                         }
@@ -71,7 +71,7 @@ function ArrayPost(props) {
 
                 <div class="curtidas">
                     <img src={props.imgcurtidoPor} alt="respondeai" />
-                    <div class="texto">
+                    <div class="texto" data-test="likes-number">
                         Curtido por <strong>{props.curtidoPorTexto}</strong> e <strong>outras {numeroDeCurtidas} pessoas</strong>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ export default function Posts() {
     ]
 
     return (
-        <div class="posts">
+        <div class="posts" data-test="post">
             {postsArray.map((post) => (
                 <ArrayPost key={post.nomeDoUsuario}
                     nomeDoUsuario={post.nomeDoUsuario}
