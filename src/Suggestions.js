@@ -35,8 +35,8 @@ export default function Suggestions() {
             <ArraySugestao 
             name ={sugestao.name} 
             image={sugestao.image} 
-            segueVoce={sugestao.segueVoce} />
-            )
+            segueVoce={sugestao.segueVoce} 
+            />)
             )}
         </div>
     )
